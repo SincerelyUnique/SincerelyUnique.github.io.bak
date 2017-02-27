@@ -1,0 +1,400 @@
+---
+title: Extjs-Viewport写的一个页面
+date: 2017-02-22 11:40:27
+tags:
+categories: Extjs
+---
+这是一个使用Extjs里Ext.container.Viewport写的一个页面：
+<!--more-->
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home Page</title>
+
+<link rel="stylesheet" type="text/css" href="../../extjs/resources/css/ext-all.css" />
+<script type="text/javascript" src="../../extjs/bootstrap.js"></script>
+
+<style>
+.systemName {
+	color: pink;
+	font-weight: 300;
+	font-size: 1em;
+	text-align:center;
+	font-family: "黑体";
+}
+.icon_add{
+    background: url(<%=request.getContextPath()%>/images/add.gif) left top no-repeat;
+}
+.icon_back{
+    background: url(<%=request.getContextPath()%>/images/back.png) left top no-repeat;
+}
+.icon_delete{
+    background: url(<%=request.getContextPath()%>/images/delete.gif) left top no-repeat;
+}
+.icon_edit{
+    background: url(<%=request.getContextPath()%>/images/edit.png) left top no-repeat;
+}
+.icon_enlarge{
+    background: url(<%=request.getContextPath()%>/images/enlarge.png) left top no-repeat;
+}
+.icon_search{
+    background: url(<%=request.getContextPath()%>/images/search.png) left top no-repeat;
+}
+/* .ico_add {background-image:url(../ico/add.png)} */
+</style>
+
+<script>Ext.Loader.setConfig({enabled:true}); </script>
+
+<script type="text/javascript">
+	var rootPath = "<%=request.getContextPath()%>";
+</script>
+
+<script type="text/javascript" src="<%=request.getContextPath()%>/view/main/income.js"></script>
+
+<script>
+Ext.Loader.setConfig({enabled:true});
+Ext.Loader.setPath('Ext.ux','../../extjs/examples/ux');
+Ext.onReady(function() {
+    var cw;
+
+    cw = Ext.create('Ext.Window', {
+        xtype: 'window',
+        closable: false,
+        minimizable: true,
+        title: 'Constrained Window',
+        height: 200,
+        width: 400,
+        constrain: true,
+        id: 'contentWinId',
+        html: 'I am in a Container',
+        itemId: 'center-window',
+        minimize: function() {
+            this.floatParent.down('button#toggleCw').toggle();
+        }
+    });
+    
+    Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
+
+    var systemName = "<div{display:inline;} class=\"systemName\">"+"Scrum Sprint Management System"+"</div>";
+    var defaultUrl = "http://ccfly.cc";
+    
+    var yScroll = (document.documentElement.scrollHeight >document.documentElement.clientHeight) ? document.documentElement.scrollHeight : document.documentElement.clientHeight; 
+    
+	Ext.define('myApp.Territory', {
+	    extend: 'Ext.data.TreeModel',
+	    fields: [{
+	        name: 'text',
+	        mapping: 'name'
+	    }]
+	});
+	Ext.define('myApp.Country', {
+	    extend: 'Ext.data.TreeModel',
+	    fields: [{
+	        name: 'text',
+	        mapping: 'name'
+	    }]
+	});
+	Ext.define('myApp.City', {
+	    extend: 'Ext.data.TreeModel',
+	    fields: [{
+	        name: 'text',
+	        mapping: 'name'
+	    }]
+	});
+	
+	//begin
+	Ext.onReady(function(){
+		Ext.create('Ext.container.Viewport', {
+		    layout: 'border',
+		    items: [{
+		        region: 'north',
+		        height: 80,
+		        border: false,
+		        
+		        items:[{
+		        	id : 'row1',
+		        	//bodyStyle:'background: #0D8AA5;padding:5px;',
+		        	xtype:'panel',
+		        	border: false,
+		        	items:[{
+				        tbar: [{
+				            xtype:'button',
+				            text: 'Version',
+				            iconCls: 'icon_add'
+				        },'-',{
+				            xtype:'button',
+				            text: 'Assets',
+				            iconCls: 'icon_back'
+				        },{
+				            xtype:'button',
+				            text: 'Location',
+				            iconCls: 'icon_delete'
+				        },{
+				            xtype:'splitbutton',
+				            text: 'Cut',
+				            iconCls: 'icon_edit',
+				            menu: [{text: 'Cut Menu Item'}]
+				        },{
+				            text: 'Copy',
+				            iconCls: 'icon_enlarge'
+				        },{
+				            text: 'Paste',
+				            iconCls: 'icon_add',
+				            menu: [{text: 'Paste Menu Item'}]
+				        },'-',{
+				            text: 'Format',
+				            iconCls: 'icon_search'
+				        }]
+				    }]
+		        },{
+					xtype:'panel',
+ 			 		layout:'column',
+ 			 		bodyStyle:'background: #0d8aa5;padding:5px;',
+ 			 		id : 'row2',
+ 			 		border: false,
+ 			 		height : 78,
+ 			 		items: [{
+ 			 			xtype: 'label',
+ 			 			width: '88%',
+ 			 			style : 'font-size: 3em',
+ 			 			html: '<center>'+systemName+'</center>',
+ 			 			height: 50
+ 			 		},{
+ 			 			xtype: 'textfield',
+                        width: '13%',
+                        id: 'searchId',
+                        margin: '5 -50',
+                        height: 30
+ 			 		},{
+ 			 			xtype:'button',
+ 			 			height: 30,
+ 			 			margin: '5 ',
+ 			 			style : 'font-size: 2em',
+ 			 			html: '<center>Search</center>'
+ 			 		}]
+				}]
+		    },{
+		        region: 'center',
+		        id: 'tabPanel',
+		        xtype: 'tabpanel',
+		        activeTab: 0,
+		        items: [{
+		        	title: 'Title',
+		            id: 'content',
+		            height: yScroll,
+		            html:' <iframe scrolling="auto" frameborder="0" width="100%" height="100%" src="'+defaultUrl+'"> </iframe>',
+		        	items: cw,
+		        	listeners: {
+		        		'change' : function(newValue, oldValue, eOpts){
+		        			console.info("change");
+		        		}
+		        	}
+		        }],
+	            bbar: [ 'Text followed by a spacer', '', {
+	                itemId: 'toggleCw',
+	                text: 'Constrained Window',
+	                enableToggle: true,
+	                toggleHandler: function() {
+	                	cw.setVisible(!cw.isVisible());
+	                	//Ext.getCmp("contentWinId").getEl().update("<div{display:inline;} class=\"contentWinId-body\">"+ "LJIJOJLJLJHLLJLJ!" +"</div>"); 
+	                }
+	            }]
+		    },{
+		        region: 'west',
+		        collapsible: true,
+	            title: 'Explore',
+		        bodyStyle:'background: #0d8aa5;padding:5px;',
+		        items:[{
+		        	xtype: 'textfield',
+		        	width:200
+		        },{
+		        	xtype: 'treepanel',
+			        width: 200,
+			        id: 'treePanel',     
+		            singleExpand: false,//同时只能打开一个树,当打开其中任何一个树时,将会关闭其他已经打开的树目录
+		            rootVisible: false,//隐藏根结点   
+		            autoScroll: true,//允许滚动条
+		            useArrows: true,//树形目录使用visita中树目录显示效果(三角形代替+号)   
+		            store: {
+		                // Child types use namespace of store's model by default
+		                model: 'myApp.Territory',
+		                proxy: {
+		                    type: 'memory',
+		                    reader: {
+		                        typeProperty: 'mtype'
+		                    }
+		                },
+		                root: {
+		                    children: [{
+		                        name: 'News',
+		                        mtype: 'Territory',
+		                        children: [{
+		                            name: 'Baidu News',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        },{
+		                            name: 'Sina News',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        },{
+		                            name: 'Others',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        }]
+		                    },{
+		                        name: 'Books',
+		                        mtype: 'Territory',
+		                        children: [{
+		                            name: 'Technology',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        },{
+		                            name: 'Novels',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        },{
+		                            name: 'Download',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        }]
+		                    },{
+		                        name: 'Video',
+		                        mtype: 'Territory',
+		                        children: [{
+		                            name: 'Net Class',
+		                            mtype: 'Country',
+		                            children: [{
+		                                name: 'IT',
+		                                mtype: 'City',
+		                                leaf: true
+		                            },{
+		                                name: 'Architecture',
+		                                mtype: 'City',
+		                                leaf: true
+		                            },{
+		                                name: 'Social Science',
+		                                mtype: 'City',
+		                                leaf: true
+		                            }]
+		                        },{
+		                            name: 'Online Film and Television',
+		                            mtype: 'Country',
+		                            children: [{
+		                                name: 'AAA',
+		                                mtype: 'City',
+		                                leaf: true
+		                            },{
+		                                name: 'Movie Download',
+		                                mtype: 'City',
+		                                leaf: true
+		                            }]
+		                        }]
+		                    },{
+		                        name: 'Income and Expenditure',
+		                        mtype: 'Territory',
+		                        children: [{
+		                            name: 'Income',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        },{
+		                            name: 'Expenditure',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        },{
+		                            name: 'Financial Statistics',
+		                            mtype: 'Country',
+		                            leaf: true
+		                        }]
+		                    }]
+		                }
+		            },
+		            listeners:{
+		                itemclick:function( record, item, index, e, eOpts) {
+		                	var a = Ext.getCmp('treePanel').getSelectionModel().getSelection();
+		                	for(var i=0;i<a.length;i++){
+		                        //Baidu News
+		                		if( a[i].data.text=="Baidu News" ){
+		                        	Ext.getCmp('content').setTitle('Baidu News');
+		                        	var url = "http://news.baidu.com/";
+		                        	var p1=new Ext.Panel({
+									    renderTo: 'content',
+									    floating: true,
+									    frame: true,
+									    width: '100%',
+									    height: '100%',
+									    items: [{
+									    	height: yScroll,
+									    	html:' <iframe scrolling="auto" frameborder="0" width="100%" height="100%" src="'+url+'"> </iframe>'
+									    }]
+									}).show();
+		                        }
+		                        
+		                        if( a[i].data.text=="Sina News" ){
+		                        	Ext.getCmp('content').setTitle('Sina News');
+		                        	var url = "http://news.sina.com.cn/";
+		                        	var p1=new Ext.Panel({
+									    renderTo: 'content',
+									    floating: true,
+									    frame: true,
+									    width: '100%',
+									    height: '100%',
+									    items: [{
+									    	height: yScroll,
+									    	html:' <iframe scrolling="auto" frameborder="0" width="100%" height="100%" src="'+url+'"> </iframe>'
+									    }]
+									}).show();
+		                        }
+		                        
+		                		if( a[i].data.text=="Income" ){
+		                        	Ext.getCmp('content').setTitle('Income');
+		                        	income();
+		                        }
+		                        
+		                        if( a[i].data.text=="Expenditure" ){
+		                        	Ext.getCmp('content').setTitle('Expenditure');
+		                        	var p1=new Ext.Panel({
+									    renderTo: 'content',
+									    floating: true,
+									    frame: true,
+									    width: '100%',
+									    height: '100%',
+									}).show();
+		                        }
+		                        if( a[i].data.text=="Financial Statistics" ){
+		                        	Ext.getCmp('content').setTitle('Financial Statistics');
+		                        	var p2=new Ext.Panel({
+									    renderTo: 'content',
+									    floating: true,
+									    frame: true,
+									    width: '100%',
+									    height: '100%',
+									}).show(); 
+		                        }
+		                    }
+		                	
+		                }
+		            }
+		        }]
+		    }/* , {
+		        region: 'south',
+		        bodyStyle:'background:#0d8aa5;padding:5px;',  //#ADD8E6
+		        html: 'Information goes here',
+		        split: false,
+		        height: 100,
+		        minHeight: 100
+		    } */]
+		});
+	});
+});
+</script>
+
+</head>
+<body>
+</body>
+</html>
+```
+
+

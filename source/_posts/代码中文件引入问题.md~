@@ -1,0 +1,51 @@
+---
+title: 代码中文件引入问题
+date: 2017-02-22 14:07:43
+tags:
+categories: Java
+---
+1.Java 源文件中，需要用到其他类，使用之前需要先将类导入（import）到该文件中，如在Hello.java中需要用到Java系统中的Date类：
+```
+import java.util.Date;  //注意，句尾的分号不能少
+```
+ <!--more-->
+2. JSP文件中静态导入其他文件（如JSP文件，HTML文件等）
+```
+<@ include file="relativeURL">
+<%@include file="configuration/index.html" %>
+```
+ 
+动态包含页面：
+```
+<jsp:include page="fileURL"></jsp:include>
+```
+
+3. JSP 文件中导入标签库文件，如导入Struts2的标签库
+```
+<@ taglib uri="taglibURI" prefix="s">
+```
+在页面中使用方法：```<s:form>  <s:input />```等
+ 
+4.引入外部样式文件
+```
+<link href="style.css" rel="stylesheet" type="text/css">
+```
+ 
+5.引入外部js文件
+```
+<script language="JavaScript" type="text/JavaScript" src=" *.js文件路径">
+</script>
+```
+ 
+6.给页面加入图片
+```
+<img src="picture.jpg" alt="使用的图片"/>
+ ```
+7. 链接地址
+```
+<a href="http://www.baidu.com" target="_blank">链接</a>
+ ```
+8.动态转发页面
+```
+<jsp:forward page="forwardURL" ></jsp:forward>
+```

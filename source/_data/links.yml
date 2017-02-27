@@ -1,0 +1,6 @@
+- name: csdn
+  url: http://blog.csdn.net/
+- name: oschina
+  url: https://my.oschina.net/chumingcheng/blog
+- name: sina
+  url: http://blog.sina.com.cn/#
