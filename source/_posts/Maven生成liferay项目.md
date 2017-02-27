@@ -6,8 +6,8 @@ categories: Liferay
 ---
 From Mercy: 
 [https://my.oschina.net/mercyyang/blog/607773](https://my.oschina.net/mercyyang/blog/607773)
-使用maven生成liferay portlet项目：
 <!--more-->
+使用maven生成liferay portlet项目：
 1. 切换到想要生成项目文件的路径
 ```
 $ mvn archetype:generate
@@ -28,7 +28,6 @@ $ mvn archetype:generate
 1781: remote -> us.fatehi:schemacrawler-archetype-plugin-lint (-)
 Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 932:
 ```
-<!--more-->
 2. 输入：liferay:portlet
 ```
 Choose archetype:
