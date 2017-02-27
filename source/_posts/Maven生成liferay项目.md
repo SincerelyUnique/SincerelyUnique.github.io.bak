@@ -5,8 +5,9 @@ tags:
 categories: Liferay
 ---
 From Mercy: [https://my.oschina.net/mercyyang/blog/607773](https://my.oschina.net/mercyyang/blog/607773)
-1. 切换到想要生成项目文件的路径
+使用maven生成liferay portlet项目
 <!--more-->
+1. 切换到想要生成项目文件的路径
 ```
 $ mvn archetype:generate
 
