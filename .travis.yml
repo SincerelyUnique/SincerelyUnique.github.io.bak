@@ -27,4 +27,4 @@ branches:
     - source
 env:
  global:
-   - GH_REF: github.com:SincerelyUnique/SincerelyUnique.github.io.git
+   - GH_REF: github.com/SincerelyUnique/SincerelyUnique.github.io.git
