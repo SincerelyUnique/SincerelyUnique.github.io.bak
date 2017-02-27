@@ -6,6 +6,7 @@ categories: Liferay
 ---
 From Mercy: [https://my.oschina.net/mercyyang/blog/607773](https://my.oschina.net/mercyyang/blog/607773)
 1. 切换到想要生成项目文件的路径
+<!--more-->
 ```
 $ mvn archetype:generate
 
@@ -136,21 +137,21 @@ package: com.liferay.test
 <properties>
         <liferay.app.server.deploy.dir>
         //根据自己的地址而定
-            /home/mercy_yang/Documents/liferay-portal/liferay-portal-6.2-ce-ga3/tomcat-7.0.42/webapps
+            /home/jalenchu/jalen_chu/tools/liferay/tomcat/liferay-portal-6.2-ce-ga6/tomcat-7.0.62/webapps
         </liferay.app.server.deploy.dir>
 
         <liferay.app.server.lib.global.dir>
             //根据自己的地址而定
-            /home/mercy_yang/Documents/liferay-portal/liferay-portal-6.2-ce-ga3/tomcat-7.0.42/lib/ext
+            /home/jalenchu/jalen_chu/tools/liferay/tomcat/liferay-portal-6.2-ce-ga6/tomcat-7.0.62/lib/ext
         </liferay.app.server.lib.global.dir>
 
         <liferay.app.server.portal.dir>
         //根据自己的地址而定
-            /home/mercy_yang/Documents/liferay-portal/liferay-portal-6.2-ce-ga3/tomcat-7.0.42/webapps/root
+            /home/jalenchu/jalen_chu/tools/liferay/tomcat/liferay-portal-6.2-ce-ga6/tomcat-7.0.62/webapps/ROOT
         </liferay.app.server.portal.dir>
 
         <liferay.auto.deploy.dir>
-            /home/mercy_yang/Documents/liferay-portal/liferay-portal-6.2-ce-ga3/deploy
+            /home/jalenchu/jalen_chu/tools/liferay/tomcat/liferay-portal-6.2-ce-ga6/deploy
         </liferay.auto.deploy.dir>
 
         <liferay.maven.plugin.version>
