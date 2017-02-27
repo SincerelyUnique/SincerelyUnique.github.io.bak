@@ -10,6 +10,7 @@ JVM terminated. Exit code=1
 /usr/bin/java
 -Dosgi.requiredJavaVersion=1.8
 -XX:+UseG1GC
+<!--more-->
 -XX:+UseStringDeduplication
 -Dosgi.requiredJavaVersion=1.8
 -Xms256m
