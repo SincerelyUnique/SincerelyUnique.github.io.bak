@@ -8,7 +8,7 @@ categories: Research
 This document describes some cache solutions, it is a reference for developing cache solution in dashboard server.     
 In current dashboard, when loading the data from database, often the performance is not good enough, by introducing cache into dashboard, performance should be get improved.
 Why Need Cache
-
+<!--more-->
 2. The background:
 Load dashboard  configurations from Liferay portlet preference slowly
 Load dashboard data from MESR database slowly
