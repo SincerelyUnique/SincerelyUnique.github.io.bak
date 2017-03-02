@@ -12,7 +12,7 @@ Purpose
 We should make sure have a friendly and sententious URL definition  in vision server side, and in our program, a very important point is to position our resources for user, so that we need to display a good and friendly uri for users include developers. 
 REST(representational state transfer) is an architectural style consisting of a coordinated set of components,connectors,and data elements within a distributed hypermedia system.it refers to a collection of architecture constraints and principles, it is an application design.a style!
 So, we need it in our vision server. 
-
+<!--more-->
 
 
 URI Operation Design
