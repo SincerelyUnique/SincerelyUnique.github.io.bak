@@ -50,6 +50,7 @@ categories: Spring
     </list>
   </property>
 </bean>
+```
 19. Apache Tiles页面布局模板框架,通过views.xml定义通用的布局和home tile
 20. 如果方法上@RequestMapping注解没有绑定路径，默认处理类上@RequestMapping路径下请求，注意是post还是get请求
 21. @Valid注解校验表单数据的传递，防止不合法的数据通过表单进行提交，是javaBean校验规范一部分
