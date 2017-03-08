@@ -57,3 +57,4 @@ categories: Spring
 22. @PathVariable String username，请求路径“/{username}”，请求路径中的该位置的值将作为username的值传递进去
 23. @Pattern注解可以定义regexp属性指定要匹配的正则表达式
 24. spring注册multipart解析器
+Appendix: spring in action 3
