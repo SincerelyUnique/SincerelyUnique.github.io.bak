@@ -6,8 +6,8 @@ categories: Java
 ---
 一. 动态代理的基本实现
 1. 首先创建一个类，觉得可以叫工具类，让它实现InvocationHandler接口，这个接口呢会自动实现一个方法，就是invoke()方法，注意，这个invoke方法的参数含有一个动态代理对象，一个反射的方法名，还有一组对象数组，OK，然后写一个方法获取你设置的目标对象的代理对象，
-<!--more-->
 代码如下：
+<!--more-->
 ```
 package demo4.dynamicproxy;
 
