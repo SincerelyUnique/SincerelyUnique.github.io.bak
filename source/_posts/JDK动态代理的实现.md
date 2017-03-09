@@ -1,6 +1,6 @@
 ---
 title: JDK动态代理的实现
-date: 2016-03-19 13:19:15
+date: 2016-03-20 13:19:15
 tags: 
 categories: Java
 ---
