@@ -218,6 +218,7 @@ public class ServerApplicationContext extends HttpServlet {
 	}
 	
 }
+```
 6. 这也是一个servlet类，类似于处理与前段页面交互的Struts2的Action类
 ```
 package com.spring.mybatis.servlet;
