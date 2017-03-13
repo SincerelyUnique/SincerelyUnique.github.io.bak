@@ -7,6 +7,7 @@ categories: Java
 1. Java采用的是单线程编程模型
 2. JVM进程不是单线程的（创建后启动一个任务线程，同时含其他线程，如垃圾回收线程）
 3. 耗时操作尽量放入子线程
+<!--more-->
 4. 创建线程：继承Thread；实现Runnable；实现callable
 5. 创建进程：ProcessBuilder的start方法；Runtime的exec方法
 6. 同步，顺序执行（串行），需等待；异步，并行
