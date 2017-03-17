@@ -5,8 +5,9 @@ tags:
 categories: Shell
 ---
 今天学习一下unix/Linux下强大的脚本语言shell。
-shell语言是c语言编写的程序，既是一种命令语言，又是一种程序设计语言，它调用了系统核心大部分功能来执行程序。
 <!--more-->
+shell语言是c语言编写的程序，既是一种命令语言，又是一种程序设计语言，它调用了系统核心大部分功能来执行程序。
+
 shell的使用程度侧面反映用户对Unix/Linux使用的熟练程度。
 [http://c.biancheng.net/cpp/view/2736.html](http://c.biancheng.net/cpp/view/2736.html)
 
