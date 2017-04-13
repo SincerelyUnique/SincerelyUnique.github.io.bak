@@ -4,7 +4,7 @@ date: 2017-04-11 16:34:08
 tags: 
 categories: Java
 ---
-本文转抄自：http://www.jb51.net/article/48304.htm，谢谢博主。
+本文转自：http://www.jb51.net/article/48304.htm
 <!--more-->
 1. 首先我们编写一个接口:Formula.java
 ```
