@@ -4,7 +4,8 @@ date: 2017-04-12 16:34:08
 tags: 
 categories: Java
 ---
-这篇博客转抄自网上，网址是：http://www.jb51.net/article/48304.htm，首先谢谢博主，收藏一下
+这篇博客转自网上，网址是：!(http://www.jb51.net/article/48304.htm)[http://www.jb51.net/article/48304.htm]
+，首先谢谢博主，收藏一下
 <!--more-->
 1. 编写一个java类
 ```
