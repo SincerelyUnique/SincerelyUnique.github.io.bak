@@ -6,6 +6,7 @@ categories: Cache
 ---
 Ehcache 的基本运用
 1.src/main/resources目录下面新建配置文件，ehcache.xml
+<!--more-->
 ```
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
