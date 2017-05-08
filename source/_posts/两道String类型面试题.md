@@ -7,7 +7,7 @@ categories: Java
 1.给定一个字符串，找出其中重复次数最多的字符，并输出重复次数
 
 <!--more-->
-```
+```java
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void test1(){
 		String testStr = "adkfo2s3lds59!3*(323sf";
@@ -64,7 +64,7 @@ categories: Java
 	}
 ```
 2.给定一个字符串，将其中数字相加求和
-```
+```java
 	public static void test2(){
 		String str = "12g644";
 		int sum = 0;
