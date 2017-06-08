@@ -13,8 +13,3 @@ www      CNAME    username.github.io.
 ```
 用你自己的 Github 用户名替换 username推荐使用 DNSPOD 的服务，使用国外的 DNS 解析服务可能有被墙的风险。至于如何使用 DNSPOD 解析域名，参考
 http://jingyan.baidu.com/article/546ae1857c4ee81149f28cbe.html3. 等待你的 DNS 配置生效对DNS的配置不是立即生效的，过10分钟再去访问你的域名看看有没有配置成功 : )
-
-作者：sjyan
-链接：https://www.zhihu.com/question/31377141/answer/103056861
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
