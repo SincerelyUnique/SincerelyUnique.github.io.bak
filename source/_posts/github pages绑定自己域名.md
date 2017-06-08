@@ -1,5 +1,5 @@
 ---
-title: github pages绑定自己域名
+title: github博客绑定自己域名
 date: 2017-06-08 16:34:08
 tags: 
 categories: Website
