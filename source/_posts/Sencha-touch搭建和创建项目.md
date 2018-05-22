@@ -30,10 +30,10 @@ categories: Extjs
 
     Sencha Cmd的编译打包实际上就是对应用的压缩。
     Sencha Cmd为我们提供了4种不同的编译和打包方式，分别是
-    sencha app build testing 供测试，QA使用版本
-    sencha app build package 脱离web server，本地html文件资源包
-    sencha app build production 正式发布的webapp产品
-    sencha app build native 打包成移动应用如android的apk或ios的app
+    sencha app build testing 供测试，QA使用版本；
+    sencha app build package 脱离web server，本地html文件资源包；
+    sencha app build production 正式发布的 webapp 产品；
+    sencha app build native 打包成移动应用如android的apk或ios的app；
 
 参考:
 [http://jingyan.baidu.com/article/cd4c29791a2f1c756f6e6054.html](http://jingyan.baidu.com/article/cd4c29791a2f1c756f6e6054.html)
