@@ -45,3 +45,5 @@ categories: Java
 
    System.out.println("用户的当前项目根目录:\n"+System.getProperty("user.dir")); 
    System.out.println("用户的当前工作目录:\n"+System.getProperty("user.dir"));
+   
+   author：jalen
