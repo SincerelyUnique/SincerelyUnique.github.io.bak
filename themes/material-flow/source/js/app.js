@@ -153,10 +153,14 @@ var BANNER_CUSTOMIMAGE = "true" == "true";
 	//}
 	
 	function getPicture() {
+		console.log("BANNER_IMAGE="+BANNER_IMAGE);
+		console.log("BANNER_CUSTOMIMAGE="+BANNER_CUSTOMIMAGE);
 		if (BANNER_IMAGE) {
 			if (BANNER_CUSTOMIMAGE) {
+				console.log("1");
 				getListImage();
 			} else {
+				console.log("2");
 				getLovewallpaper();
 			}
 		} else {
