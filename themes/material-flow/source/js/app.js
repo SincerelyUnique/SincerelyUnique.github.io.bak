@@ -1,5 +1,8 @@
 /* eslint-disable */
 var customSearch;
+var BANNER_IMAGE = "true" == "true";
+var BANNER_CUSTOMIMAGE = "true" == "true";
+  var BANNER_IMAGELIST = "http://7xvoon.com1.z0.glb.clouddn.com/battle20170106.png".split(',');
 (function ($) {
 
 	"use strict";
@@ -137,7 +140,7 @@ var customSearch;
 		scrollListener();
 	}
 
-	function getPicture() {
+	//function getPicture() {
 		//const $banner = $('.banner');
 		//if ($banner.length === 0) return;
 		//const url = ROOT + 'js/lovewallpaper.json';
@@ -147,13 +150,45 @@ var customSearch;
 		//		$banner.css('background-image', 'url(' + res.data[index].big + ')');
 		//	}
 		//})
+	//}
+	
+	function getPicture() {
+		if (BANNER_IMAGE) {
+			if (BANNER_CUSTOMIMAGE) {
+				getListImage();
+			} else {
+				getLovewallpaper();
+			}
+		} else {
+			setNoimageBanner();
+		}
+	}
+
+	function getListImage() {
 		const $banner = $('.banner');
 		if ($banner.length === 0) return;
-		var BANNER_IMAGELIST = "http://7xvoon.com1.z0.glb.clouddn.com/battle20170106.png".split(',');
 		if (BANNER_IMAGELIST.length > 0) {
 			const index = Math.floor(Math.random() * BANNER_IMAGELIST.length);
 			$banner.css('background-image', 'url(' + BANNER_IMAGELIST[index] + ')');
 		}
+	}
+
+	function getLovewallpaper() {
+		const $banner = $('.banner');
+		if ($banner.length === 0) return;
+		const url = ROOT + 'js/lovewallpaper.json';
+		$.get(url).done(res => {
+			if (res.data.length > 0) {
+				const index = Math.floor(Math.random() * res.data.length);
+				$banner.css('background-image', 'url(' + res.data[index].big + ')');
+			}
+		})
+	}
+
+	function setNoimageBanner() {
+		const $banner = $('.banner');
+		if ($banner.length === 0) return;
+		$banner.addClass('noimage');
 	}
 
 	function getHitokoto() {
