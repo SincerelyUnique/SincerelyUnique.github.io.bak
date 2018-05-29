@@ -138,15 +138,22 @@ var customSearch;
 	}
 
 	function getPicture() {
+		//const $banner = $('.banner');
+		//if ($banner.length === 0) return;
+		//const url = ROOT + 'js/lovewallpaper.json';
+		//$.get(url).done(res => {
+		//	if (res.data.length > 0) {
+		//		const index = Math.floor(Math.random() * res.data.length);
+		//		$banner.css('background-image', 'url(' + res.data[index].big + ')');
+		//	}
+		//})
 		const $banner = $('.banner');
 		if ($banner.length === 0) return;
-		const url = ROOT + 'js/lovewallpaper.json';
-		$.get(url).done(res => {
-			if (res.data.length > 0) {
-				const index = Math.floor(Math.random() * res.data.length);
-				$banner.css('background-image', 'url(' + res.data[index].big + ')');
-			}
-		})
+		var BANNER_IMAGELIST = "http://7xvoon.com1.z0.glb.clouddn.com/battle20170106.png".split(',');
+		if (BANNER_IMAGELIST.length > 0) {
+			const index = Math.floor(Math.random() * BANNER_IMAGELIST.length);
+			$banner.css('background-image', 'url(' + BANNER_IMAGELIST[index] + ')');
+		}
 	}
 
 	function getHitokoto() {
