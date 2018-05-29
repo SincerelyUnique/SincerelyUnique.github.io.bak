@@ -152,7 +152,7 @@ var customSearch;
 	function getHitokoto() {
 		const $hitokoto = $('#hitokoto');
 		if($hitokoto.length === 0) return;
-		const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
+		const url = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527571724279&di=a8676bb1932daf8fca6fc5221e04a722&imgtype=0&src=http%3A%2F%2Fimg1.3lian.com%2F2015%2Fa2%2F53%2Fd%2F25.jpg';
 		$('body').append('<script	src="%s"></script>'.replace('%s',url));
 		window.handlerHitokoto = (data) => {
 			$hitokoto
