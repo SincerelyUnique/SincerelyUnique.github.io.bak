@@ -152,7 +152,7 @@ var customSearch;
 	function getHitokoto() {
 		const $hitokoto = $('#hitokoto');
 		if($hitokoto.length === 0) return;
-		const url = 'http://api.hitokoto.us/rand?length=80&encode=jsc&fun=handlerHitokoto';
+		const url = 'https://api.hitokoto.cn/?length=80&encode=jsc&fun=handlerHitokoto';
 		$('body').append('<script	src="%s"></script>'.replace('%s',url));
 		window.handlerHitokoto = (data) => {
 			$hitokoto
