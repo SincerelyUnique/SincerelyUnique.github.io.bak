@@ -26,3 +26,5 @@ yumconfig (Optional, confirm is 172.26.100.202)
 yum clean all
 yum remove mes15_portal_server-information-1.12.....
 yum install mes15_portal_server-information
+
+test
