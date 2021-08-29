@@ -14,6 +14,10 @@ install:
 
 script:
   - hexo g
+  
+deploy:
+  provider: pages:git
+  deploy_key: $GITHUB_TOKEN
 
 after_script:
   - cd ./public
