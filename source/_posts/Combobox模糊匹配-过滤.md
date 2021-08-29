@@ -27,7 +27,7 @@ listeners : {
 	}
 }
 ```
-这些插入到combobox代码块中
+这些插入到combobox代码块中去
 参考:
 
 [http://pingfan.iteye.com/blog/514163](http://pingfan.iteye.com/blog/514163)
