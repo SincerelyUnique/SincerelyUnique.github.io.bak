@@ -19,7 +19,7 @@ after_script:
   - git config user.email "1152357479@qq.com"
   - git add .
   - git commit -m "Update docs"
-  - git push --force --quiet "git://${GH_TOKEN}@${GH_REF}" master:master
+  - git push --force --quiet "git@github.com:SincerelyUnique/SincerelyUnique.github.io.git" master:master
 # E: Build LifeCycle
 
 branches:
