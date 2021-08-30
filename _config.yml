@@ -47,6 +47,8 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
+prismjs:
+  enable: false # edit for Theme.shoka
 
 # Category & Tag
 default_category: uncategorized
@@ -68,8 +70,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: material-flow
+#theme: material-flow
 #theme: smackdown
+theme: shoka
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -137,9 +140,75 @@ autoprefixer:
 
 # rss
 feed:
-  type: atom
-  path: atom.xml
   limit: 20
-  hub:
-  content:
+  order_by: "-date"
+  tag_dir: false
+  category_dir: false
+  rss:
+    enable: true
+    template: "themes/shoka/layout/_alternate/rss.ejs"
+    output: "rss.xml"
+  atom:
+    enable: true
+    template: "themes/shoka/layout/_alternate/atom.ejs"
+    output: "atom.xml"
+  jsonFeed:
+    enable: true
+    template: "themes/shoka/layout/_alternate/json.ejs"
+    output: "feed.json"
 
+markdown:
+  render:
+    html: false
+    xhtmlOut: true
+    breaks: true
+    linkify: true
+    typographer:
+    quotes: '“”‘’'
+  plugins:
+    - plugin:
+        name: markdown-it-toc-and-anchor
+        enable: true
+        options:
+          tocClassName: 'toc'
+          anchorClassName: 'anchor'
+    - plugin:
+        name: markdown-it-multimd-table
+        enable: true
+        options:
+          multiline: true
+          rowspan: true
+          headerless: true
+    - plugin:
+        name: ./markdown-it-furigana
+        enable: true
+        options:
+          fallbackParens: "()"
+    - plugin:
+        name: ./markdown-it-spoiler
+        enable: true
+        options:
+          title: "你知道得太多了"
+
+minify:
+  html:
+    enable: true
+    stamp: false
+    exclude:
+      - '**/json.ejs'
+      - '**/atom.ejs'
+      - '**/rss.ejs'
+  css:
+    enable: true
+    stamp: false
+    exclude:
+      - '**/*.min.css'
+  js:
+    enable: true
+    stamp: false
+    mangle:
+      toplevel: true
+    output:
+    compress:
+    exclude:
+      - '**/*.min.js'
